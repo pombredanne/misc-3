@@ -1,0 +1,10 @@
+LoadModule wsgi_module modules/mod_wsgi-win32-ap22py27-3.3.so
+<VirtualHost *:80>
+    WSGIScriptAlias /fapp "D:\home\misc\ec2\www\wsgiapp\flaskapp\flaskapp.wsgi"
+    WSGIApplicationGroup %{GLOBAL}
+    <Directory "D:\home\misc\ec2\www\wsgiapp\flaskapp">
+        AllowOverride None
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
