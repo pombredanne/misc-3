@@ -2,17 +2,19 @@
 #
 # Usage:
 # > fab -f www/wsgiapp/tools/fabfile.py -u <username> -H <hostname> main
-# in repository top directory
+# in repository top directory(ec2 directory)
 
 import os
 import datetime
+import traceback
 
 from fabric.api import *
 
 TAR = "tar"
 NOW = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+
 if os.environ['OS'] == 'Windows_NT' and os.name == 'nt':
-    env.key_filename = ["d:\\kawasaki_takeshi\\mydoc\\Downloads\\al64.pem"]
+    env.key_filename = ["%s\\.ssh\\ec2\\al64.pem" % os.environ["USERPROFILE"]]
     TAR = "c:\\cygwin\\bin\\tar.exe"
 
 def export():
@@ -36,9 +38,16 @@ def deploy():
         run('touch www/wsgiapp/flaskapp/flaskapp.wsgi')
 
 def clean():
-    local('rm -rf archive-*' % NOW)
+    local('rm -rf archive-*')
+
+def test():
+    run("uname -a")
 
 def main():
     prepare_deploy()
-    deploy()
-    clean()
+    try:
+        deploy()
+    except:
+        traceback.print_exc()
+    finally:
+        clean()
