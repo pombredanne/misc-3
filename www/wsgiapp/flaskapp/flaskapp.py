@@ -19,11 +19,11 @@ def teardown_request(exception):
 @app.route('/')
 def hello():
     app.jinja_loader = FileSystemLoader(os.path.join(app.root_path, 'templates'))
-    fapps = ['synhighhelper']
+    fapps = ['codefetch']
     context = {'version':VERSION, 'fapps':fapps}
     return render_template('index.html', **context)
 
-from synhighhelper import synhighhelper
+from codefetch import codefetch
 
 if __name__ == '__main__':
     app.run(debug=True)
