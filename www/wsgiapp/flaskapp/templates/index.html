@@ -4,11 +4,18 @@
     <link rel="stylesheet" type="text/css" href="/fapp/static/css/index.css">
 
   </head>
-  {{sys_version}}
   <body>
+
+    <div id="contents">
+      {% for fapp in fapps %}
+      <a href="/fapp/{{fapp}}">{{fapp}}</a>
+      {% endfor %}
+    </div>
+
     <div id="footer">
       <hr>
       {{version}}
     </div>
+
   </body>
 </html>

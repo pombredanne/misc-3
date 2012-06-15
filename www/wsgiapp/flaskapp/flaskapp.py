@@ -19,7 +19,9 @@ def teardown_request(exception):
 @app.route('/')
 def hello():
     app.jinja_loader = FileSystemLoader(os.path.join(app.root_path, 'templates'))
-    return render_template('index.html', sys_version=sys.version, version=VERSION)
+    fapps = ['synhighhelper']
+    context = {'version':VERSION, 'fapps':fapps}
+    return render_template('index.html', **context)
 
 from synhighhelper import synhighhelper
 
