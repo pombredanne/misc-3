@@ -22,7 +22,7 @@
 
     <h3>codefetch.html (source code of this page)</h3>
     <div>
-      <pre id="sourcecode" class="brush:xml"></pre>
+      <pre id="sourcecode"></pre>
     </div>
 
     <div id="footer">
@@ -30,8 +30,8 @@
     </div>
 
     <script type="text/javascript" charset="utf-8">
-      $("#codefetchcode").codefetch("codefetch/static/js/codefetch.js", "javascript");
-      $("#sourcecode").codefetch("codefetch/static/codefetch.html", "html");
+      $("#codefetchcode").codefetch("sakitake", "lib", "js/codefetch/codefetch.js", "javascript");
+      $("#sourcecode").codefetch("sakitake", "misc", "www/wsgiapp/flaskapp/codefetch/templates/codefetch.html", "xml");
       SyntaxHighlighter.all();
     </script>
 
