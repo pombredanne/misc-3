@@ -5,9 +5,20 @@ div#footer {
     padding-top: 10px;
 }
 
-h3 {
-    font-size: 12px;
+h1 {
     color: black;
     border-bottom-width: 2px;
     border-bottom-style: solid;
+}
+
+h3 {
+    font-size: 12px;
+    color: black;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+}
+
+#explain {
+    font-size: 15px;
+    line-height: 200%;
 }

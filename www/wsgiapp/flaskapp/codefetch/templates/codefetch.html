@@ -1,5 +1,6 @@
 <html>
   <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <title>CodeFetch Demo</title>
     <link rel="stylesheet" type="text/css" href="codefetch/static/css/codefetch.css">
 
@@ -15,14 +16,18 @@
   </head>
 
   <body>
-    <h3>codefetch.js (jQuery Plug-in)</h3>
-    <div>
-      <pre id="codefetchcode"></pre>
-    </div>
+    <h1> jQuery Plug-in codefetch.js Demo Page</h1>
+    <div id="main_content">
+      <pre id="explain">
+        codefecth.jsはgithubよりソースコードを動的に取得して、指定したIDの要素に追加するjQueryプラグインです。
+        このページはそのデモページで、codefetch.js自身のソースコードを取得して表示しています。
+      </pre>
 
-    <h3>codefetch.html (source code of this page)</h3>
-    <div>
-      <pre id="sourcecode"></pre>
+      <h3>codefetch.js</h3>
+      <div>
+        <pre id="codefetchcode"></pre>
+      </div>
+
     </div>
 
     <div id="footer">
@@ -31,7 +36,6 @@
 
     <script type="text/javascript" charset="utf-8">
       $("#codefetchcode").codefetch("sakitake", "lib", "js/codefetch/codefetch.js", "javascript");
-      $("#sourcecode").codefetch("sakitake", "misc", "www/wsgiapp/flaskapp/codefetch/templates/codefetch.html", "xml");
       SyntaxHighlighter.all();
     </script>
 
