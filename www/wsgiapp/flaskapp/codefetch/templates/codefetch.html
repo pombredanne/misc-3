@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="codefetch/static/css/codefetch.css">
 
     <script type="text/javascript" src="codefetch/static/js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="codefetch/static/js/codefetch.js"></script>
+    <script type="text/javascript" src="codefetch/static/js/jquery.codefetch.js"></script>
 
     <link href='http://alexgorbatchev.com/pub/sh/current/styles/shCore.css' rel='stylesheet' type='text/css'/>
     <link href='http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css' rel='stylesheet' type='text/css'/>
@@ -21,6 +21,7 @@
       <pre id="explain">
         codefecth.jsはgithubよりソースコードを動的に取得して、指定したIDの要素に追加するjQueryプラグインです。
         このページはそのデモページで、codefetch.js自身のソースコードを取得して表示しています。
+        以下のようにSyntaxHighlighterを併用してコードを表示することもできます。
       </pre>
 
       <h3>codefetch.js</h3>
@@ -35,7 +36,7 @@
     </div>
 
     <script type="text/javascript" charset="utf-8">
-      $("#codefetchcode").codefetch("sakitake", "lib", "js/codefetch/codefetch.js", "javascript");
+      $("#codefetchcode").codefetch("sakitake", "lib", "js/codefetch/jquery.codefetch.js", "javascript");
       SyntaxHighlighter.all();
     </script>
 
