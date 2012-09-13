@@ -22,6 +22,6 @@ function codefetchJSONPCallback(json) {
         var script = "<script type=\"text/javascript\" src=\"" + url + "\"></script>";
 
         this.after(script);
-    }
+    };
 
 })(jQuery);
